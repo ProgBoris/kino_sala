@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kino - Filmovi</title>
+    <style>
+        /* Osnovni stilovi */
+        html { scroll-behavior: smooth; } /* Glatko skrolovanje na klik menija */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            min-width: 300px;
+        }
+
+        /* --- MENI (FIXED/STICKY) --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #2c3e50;
+            color: white;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 18px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+            color: #3498db;
+        }
+
+        /* Responsivni meni: ako je ekran uzak, slažu se jedan ispod drugog */
+        @media screen and (max-width: 600px) {
+            nav ul { flex-direction: column; }
+            nav ul li { border-bottom: 1px solid #3e4f5f; }
+        }
+
+        /* --- KONTEJNERI --- */
+        .container {
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 60px 0 20px 0; /* Padding da naslov ne ode pod fiksni meni */
+            border-bottom: 1px solid #ccc;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: #2c3e50;
+            border-left: 8px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* --- GRID RASPORED --- */
+        .movie-grid {
+            display: grid;
+            gap: 20px; /* Razmak veći od minimalnih 10px */
+            justify-content: center;
+        }
+
+        /* Specifični zahtjevi za broj kolona */
+        @media screen and (min-width: 1080px) {
+            .movie-grid { grid-template-columns: repeat(5, 200px); }
+        }
+
+        @media screen and (min-width: 800px) and (max-width: 1079px) {
+            .movie-grid { grid-template-columns: repeat(3, 200px); }
+        }
+
+        /* Ispod 800px, grid se sam prilagođava do minimalno 300px ekrana */
+        @media screen and (max-width: 799px) {
+            .movie-grid { grid-template-columns: repeat(auto-fit, 200px); }
+        }
+
+        /* --- KARTICA FILMA --- */
+        .movie-card {
+            width: 200px;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .movie-card img {
+            width: 200px;
+            height: 280px;
+            display: block;
+            background-color: #ddd; /* Ako slika ipak ne učita */
+        }
+
+        .movie-card h4 {
+            margin: 10px 5px;
+            font-size: 16px;
+            min-height: 40px;
+        }
+
+        .movie-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Boje pozadina */
+        .status-current { background-color: white; }
+        .status-soon { background-color: powderblue; }
+        .status-expired { background-color: gray; color: white; }
+
+        /* Pomoćne sekcije za linkove */
+        .placeholder-section {
+            height: 400px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#filmovi">Filmovi</a></li>
+            <li><a href="#raspored">Raspored</a></li>
+            <li><a href="#sala">Sala</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <section id="filmovi">
+            <h1>Trenutno u kinima</h1>
+
+            <div id="akcija">
+                <h2>Akcija</h2>
+                <div class="movie-grid">
+                    <div class="movie-card status-current">
+                        <img src="https://placehold.co/200x280/000000/FFFFFF/png?text=John+Wick+4" alt="John Wick">
+                        <h4>John Wick 4</h4>
+                        <p>169 min</p>
+                    </div>
+                    <div class="movie-card status-soon">
+                        <img src="https://placehold.co/200x280/4682B4/FFFFFF/png?text=Fast+X" alt="Fast X">
+                        <h4>Fast X</h4>
+                        <p>141 min</p>
+                    </div>
+                    <div class="movie-card status-expired">
+                        <img src="https://placehold.co/200x280/555555/FFFFFF/png?text=Die+Hard" alt="Die Hard">
+                        <h4>Die Hard</h4>
+                        <p>132 min</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="drama">
+                <h2>Drama</h2>
+                <div class="movie-grid">
+                    <div class="movie-card status-current">
+                        <img src="https://placehold.co/200x280/000000/FFFFFF/png?text=Oppenheimer" alt="Oppenheimer">
+                        <h4>Oppenheimer</h4>
+                        <p>180 min</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="komedija">
+                <h2>Komedija</h2>
+                <div class="movie-grid">
+                    <div class="movie-card status-soon">
+                        <img src="https://placehold.co/200x280/4682B4/FFFFFF/png?text=Barbie" alt="Barbie">
+                        <h4>Barbie</h4>
+                        <p>114 min</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="animirani">
+                <h2>Animirani</h2>
+                <div class="movie-grid">
+                    <div class="movie-card status-current">
+                        <img src="https://placehold.co/200x280/000000/FFFFFF/png?text=Spider-Man" alt="Spider-Man">
+                        <h4>Spider-Man</h4>
+                        <p>140 min</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="raspored">
+            <h2>Raspored projekcija</h2>
+            <div class="placeholder-section">
+                Sadržaj za raspored projekcija (u izradi...)
+            </div>
+        </section>
+
+        <section id="sala">
+            <h2>Plan sale</h2>
+            <div class="placeholder-section">
+                Prikaz sjedišta u sali (u izradi...)
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

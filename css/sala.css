@@ -1,0 +1,54 @@
+body {
+  font-family: Arial;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.page {
+  max-width: 800px;
+  margin: auto;
+}
+
+.info {
+  text-align: center;
+}
+
+.screen {
+  background: #555;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.hall {
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 30px repeat(10, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.free { background: green; }
+.taken { background: red; }
+.reserved { background: gray; }
+
+/* responsive */
+@media (max-width: 600px) {
+  .seat {
+    width: 20px;
+    height: 20px;
+  }
+}

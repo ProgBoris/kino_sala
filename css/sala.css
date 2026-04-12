@@ -45,10 +45,118 @@ body {
 .taken { background: red; }
 .reserved { background: gray; }
 
+/* Dinamički prikaz */
+.info-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-header h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.info-header p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.platno-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.platno {
+  background: #555;
+  color: white;
+  text-align: center;
+  padding: 15px 40px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.sjedista-grid {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.red {
+  display: grid;
+  grid-template-columns: 40px repeat(10, 30px);
+  gap: 8px;
+  align-items: center;
+}
+
+.oznaka-reda {
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.sjediste {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sjediste.slobodno {
+  background: green;
+}
+
+.sjediste.slobodno:hover {
+  background: darkgreen;
+  transform: scale(1.1);
+}
+
+.sjediste.zauzeto {
+  background: red;
+  cursor: not-allowed;
+}
+
+.sjediste.rezervisano {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* Dugmadi */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
 /* responsive */
 @media (max-width: 600px) {
   .seat {
     width: 20px;
     height: 20px;
+  }
+  
+  .sjediste {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .red {
+    grid-template-columns: 30px repeat(10, 20px);
   }
 }

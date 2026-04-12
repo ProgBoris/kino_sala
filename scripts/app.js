@@ -20,18 +20,33 @@ function generisiSjedista() {
 const kinoPodaci = {
     projekcije: [
         {
-            film: "Avatar 2",
+            film: "John Wick 4",
             vrijeme: "18:00",
             sjedista: generisiSjedista()
         },
         {
-            film: "Dina: Drugi dio",
+            film: "Oppenheimer",
             vrijeme: "20:00",
             sjedista: generisiSjedista()
         },
         {
-            film: "John Wick 4",
+            film: "Fast X",
             vrijeme: "22:30",
+            sjedista: generisiSjedista()
+        },
+        {
+            film: "Barbie",
+            vrijeme: "16:45",
+            sjedista: generisiSjedista()
+        },
+        {
+            film: "Spider-Man",
+            vrijeme: "19:15",
+            sjedista: generisiSjedista()
+        },
+        {
+            film: "Die Hard",
+            vrijeme: "21:30",
             sjedista: generisiSjedista()
         }
     ]

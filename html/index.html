@@ -10,6 +10,7 @@
 
     <nav>
         <ul>
+            <li><a href="#hero">Početna</a></li>
             <li><a href="#filmovi">Filmovi</a></li>
             <li><a href="#raspored">Raspored</a></li>
             <li><a href="sala.html">Sala</a></li>
@@ -17,82 +18,97 @@
     </nav>
 
     <div class="container">
-       
+        <section id="hero" class="hero-sekcija">
+            <div class="hero-tekst">
+                <p class="hero-tip">Projekt kino sala</p>
+                <h1>Rezerviši ulaznice brzo i povoljno</h1>
+                <p class="hero-subtitle">Izaberi film, termin i svoje mjesto u sali na jedan klik.</p>
+                <a id="hero-dugme" href="sala.html" class="hero-dugme">Rezerviši sada</a>
+            </div>
+            <div class="hero-karta">
+                <div class="hero-card">
+                    <img id="hero-poster" src="https://lh3.googleusercontent.com/proxy/8NNuLzyjKLZEO-oPa6gjCXpVEvEsZxqpJyuxra2buSlitLa2n-kFuKUBL-DgUYcipqoJUYHTy2ZMXdHfXLIq9IiLJ3d4cWHYvBBv9I1jyRwxmIM" alt="Hero Poster">
+                </div>
+            </div>
+        </section>
+
         <section id="filmovi">
             <h1>Trenutno u kinima</h1>
-
-            <div id="akcija">
-                <h2>Akcija</h2>
-                <div class="movie-grid">
-                    <a hraf ="sala.html" class="movie-card status-current">
-                        <img src="https://placehold.co/200x280/000000/FFFFFF/png?text=Oppenheimer" alt="Oppenheimer">
-                        <h4>Oppenheimer</h4>
-                        <p>180 min</p>
-                    </a>
-
-                    <a href="sala.html" class="movie-card status-current">
-                        <img src="https://placehold.co/200x280/000000/FFFFFF/png?text=John+Wick+4" alt="John Wick">
-                        <h4>John Wick 4</h4>
-                        <p>169 min</p>
-                    </a>
-
-                    <a href="sala.html" class="movie-card status-soon">
-                        <img src="https://placehold.co/200x280/4682B4/FFFFFF/png?text=Fast+X" alt="Fast X">
-                        <h4>Fast X</h4>
-                        <p>141 min</p>
-                    </a>
-
-                    <a href="sala.html" class="movie-card status-expired">
-                        <img src="https://placehold.co/200x280/555555/FFFFFF/png?text=Die+Hard" alt="Die Hard">
-                        <h4>Die Hard</h4>
-                        <p>132 min</p>
-                    </a>
-                </div>
+            <div class="movie-grid">
+                <a href="sala.html?film=John+Wick+4" class="movie-card status-current">
+                    <img src="https://posterspy.com/wp-content/uploads/2022/07/dfthfthj.jpg" alt="John Wick 4">
+                    <h4>John Wick 4</h4>
+                    <p>169 min</p>
+                </a>
+                <a href="sala.html?film=Oppenheimer" class="movie-card status-current">
+                    <img src="https://www.tallengestore.com/cdn/shop/products/Oppenheimer-CillianMurphy-ChristopherNolan-HollywoodMoviePoster.jpg?v=1691369029" alt="Oppenheimer">
+                    <h4>Oppenheimer</h4>
+                    <p>180 min</p>
+                </a>
+                <a href="sala.html?film=Fast+X" class="movie-card status-soon">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYzEwZjczOTktYzU1OS00YjJlLTgyY2UtNWEzODBlN2RjZDEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Fast X">
+                    <h4>Fast X</h4>
+                    <p>141 min</p>
+                </a>
+                <a href="sala.html?film=Barbie" class="movie-card status-soon">
+                    <img src="https://image.tmdb.org/t/p/original/dekMkQf0kqAmztUca9lX5e5Pjbp.jpg" alt="Barbie">
+                    <h4>Barbie</h4>
+                    <p>114 min</p>
+                </a>
+                <a href="sala.html?film=Spider-Man" class="movie-card status-current">
+                    <img src="https://m.media-amazon.com/images/I/71gx5DiQa-L.jpg" alt="Spider-Man">
+                    <h4>Spider-Man</h4>
+                    <p>120 min</p>
+                </a>
+                <a href="sala.html?film=Die+Hard" class="movie-card status-expired">
+                    <img src="https://www.originalfilmart.com/cdn/shop/products/die_hard_1988_advance_original_film_art_1600x.jpg?v=1575409750" alt="Die Hard">
+                    <h4>Die Hard</h4>
+                    <p>132 min</p>
+                </a>
             </div>
-
-            <div id="drama">
-                <h2>Drama</h2>
-                <div class="movie-grid">
-                    <div class="movie-card status-current">
-                        <img src="https://placehold.co/200x280/000000/FFFFFF/png?text=Oppenheimer" alt="Oppenheimer">
-                        <h4>Oppenheimer</h4>
-                        <p>180 min</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="komedija">
-                <h2>Komedija</h2>
-                <div class="movie-grid">
-                    <div class="movie-card status-soon">
-                        <img src="https://placehold.co/200x280/4682B4/FFFFFF/png?text=Barbie" alt="Barbie">
-                        <h4>Barbie</h4>
-                        <p>114 min</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="animirani">
-                <h2>Animirani</h2>
-                <div class="movie-grid">
-                    <div class="movie-card status-current">
-                        <img src="https://placehold.co/200x280/000000/FFFFFF/png?text=Spider-Man" alt="Spider-Man">
-                        <h4>Spider-Man</h4>
-
-                                                <p>120 min</p>
-                    </div>
-                </div>
-            </div>
-
         </section>
 
-        <section id="raspored" class="placeholder-section">
-            Raspored
+        <section id="raspored" class="raspored-sekcija">
+            <h2>Raspored projekcija</h2>
+            <div class="raspored-grid">
+                <div class="raspored-kartica">
+                    <h3>John Wick 4</h3>
+                    <p>18:00 — Sala 1</p>
+                </div>
+                <div class="raspored-kartica">
+                    <h3>Oppenheimer</h3>
+                    <p>20:00 — Sala 2</p>
+                </div>
+                <div class="raspored-kartica">
+                    <h3>Fast X</h3>
+                    <p>22:30 — Sala 3</p>
+                </div>
+                <div class="raspored-kartica">
+                    <h3>Barbie</h3>
+                    <p>16:45 — Sala 4</p>
+                </div>
+                <div class="raspored-kartica">
+                    <h3>Spider-Man</h3>
+                    <p>19:15 — Sala 5</p>
+                </div>
+                <div class="raspored-kartica">
+                    <h3>Die Hard</h3>
+                    <p>21:30 — Sala 6</p>
+                </div>
+            </div>
         </section>
-
-    
-
     </div>
+
+    <script src="../scripts/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (kinoPodaci && kinoPodaci.projekcije.length > 0) {
+                const najnoviji = kinoPodaci.projekcije[0];
+                document.getElementById("hero-poster-tekst").innerText = najnoviji.film;
+                document.getElementById("hero-dugme").href = `sala.html?film=${encodeURIComponent(najnoviji.film)}`;
+            }
+        });
+    </script>
 
 </body>
 </html>

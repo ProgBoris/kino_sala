@@ -82,6 +82,105 @@ body {
   margin: 20px 0;
 }
 
+.sala-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.sala-layout {
+  background: white;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.rezervacija-panel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rezervacija-kartica {
+  width: 100%;
+  border-radius: 22px;
+  padding: 24px;
+  background: white;
+  border: 1px solid #e6ebf0;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.08);
+}
+
+.rezervacija-kartica h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1f3057;
+}
+
+.rezervacija-lista {
+  margin: 18px 0;
+  min-height: 100px;
+}
+
+.rezervacija-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f8fb;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  color: #1f3057;
+  font-weight: 600;
+}
+
+.rezervacija-prazno {
+  color: #7a8698;
+  font-size: 14px;
+  padding: 18px 14px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.rezervacija-meta p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #485068;
+}
+
+.rezervacija-meta span {
+  font-weight: 700;
+  color: #1f3057;
+}
+
+.kupi-dugme {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.kupi-dugme:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.kupi-dugme:disabled {
+  background: #d3d9e3;
+  cursor: not-allowed;
+}
+
+.navigacija-sala {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .red {
   display: grid;
   grid-template-columns: 40px repeat(10, 30px);
@@ -110,6 +209,12 @@ body {
 .sjediste.slobodno:hover {
   background: darkgreen;
   transform: scale(1.1);
+}
+
+.sjediste.izabrano {
+  background: #ffb400;
+  border: 2px solid #ffd95c;
+  transform: scale(1.05);
 }
 
 .sjediste.zauzeto {
@@ -144,7 +249,47 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Poruka o rezervaciji */
+.poruka-rezervacije {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28a745;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: top 0.3s ease;
+  z-index: 1000;
+  max-width: 90%;
+}
+
+.poruka-rezervacije.prikaži {
+  top: 20px;
+}
+
+.poruka-sadrzaj h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.poruka-sadrzaj p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
 /* responsive */
+@media (max-width: 900px) {
+  .sala-content {
+    grid-template-columns: 1fr;
+  }
+
+  .rezervacija-panel {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 600px) {
   .seat {
     width: 20px;
